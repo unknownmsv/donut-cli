@@ -9,7 +9,10 @@
 
 ### Installation  
 ```bash  
-git clone https://github.com/unknownmsv/donut-cli  
+git clone https://github.com/unknownmsv/donut-cli
+cd donut-cli
+npm install build
+npm install
 npm install -g .  
 ```  
 *Pro tip: Tastes best with a side of `node.js`!*  

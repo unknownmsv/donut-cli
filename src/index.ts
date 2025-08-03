@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
+// FIX: Changed all import extensions from .ts to .js
 import { clone } from './commands/clone.js';
 import { build } from './commands/build.js';
 import { install } from './commands/install.js';
-import { list } from './commands/list.js'; // اضافه کردن دستور جدید
+import { list } from './commands/list.js';
 
 const program = new Command();
 
@@ -17,7 +18,7 @@ program
   .command('clone')
   .description('یک ریپازیتوری از قالب‌های پروژه را کلون می‌کند')
   .argument('<project>', 'نام پروژه (ریپازیتوری) برای کلون کردن')
-  .option('-u, --user <username>', 'نام کاربری گیت‌هاب مالک ریپازITوری', 'unknownmsv')
+  .option('-u, --user <username>', 'نام کاربری گیت‌هاب مالک ریپازیتوری', 'unknownmsv')
   .action(clone);
 
 program
@@ -30,7 +31,6 @@ program
   .description('نصب یک پکیج از لیست پکیج‌های Donut')
   .action(install);
 
-// تعریف دستور جدید
 program
   .command('list')
   .description('نمایش تمام پکیج‌های قابل نصب')

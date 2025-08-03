@@ -1,21 +1,30 @@
 {
   "name": "donut-cli",
   "version": "0.1.0",
-  "description": "🧁 Donut CLI برای مدیریت پروژه‌ها از GitHub",
-  "type": "module",
+  "description": "🧁 Donut CLI - یک ابزار ساده برای مدیریت پروژه‌های شما",
+  "main": "dist/index.js",
   "bin": {
-    "donut": "./src/index.ts"
+    "donut": "dist/index.js"
   },
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "build": "./node_modules/.bin/tsc",
+    "start": "node dist/index.js",
+    "prepare": "npm run build",
+    "postinstall": "chmod +x ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.2",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
-    "commander": "^11.1.0",
-    "ora": "^6.3.1",
+    "axios": "^1.7.2",
     "chalk": "^5.3.0",
-    "ts-node": "^10.9.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.2.2"
+    "commander": "^12.1.0",
+    "inquirer": "^9.2.23",
+    "ora": "^8.0.1"
   }
 }
